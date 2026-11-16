@@ -36,9 +36,9 @@ const NAV_ITEMS: NavItem[] = [
   { label: "Overview", href: ROUTES.member.dashboard, icon: LayoutDashboard },
   { label: "My Profile", href: ROUTES.member.profile, icon: User },
   { label: "Business Profiles", href: ROUTES.member.myBusiness, icon: Store },
-  { label: "Marketplace", href: ROUTES.public.marketplace, icon: ShoppingBag },
-  { label: "Forums & Circles", href: ROUTES.public.community, icon: MessageSquare },
-  { label: "Events", href: ROUTES.public.events, icon: Calendar },
+  { label: "Marketplace", href: ROUTES.member.marketplace, icon: ShoppingBag },
+  { label: "Forums & Circles", href: ROUTES.member.forum, icon: MessageSquare },
+  { label: "Events", href: ROUTES.member.resources, icon: Calendar },
 ];
 
 interface SidebarContentProps {
@@ -305,20 +305,12 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <div className="flex shrink-0 items-center gap-3 sm:gap-4">
               {/* Verification Status Badge */}
               {isVerified ? (
-                <Badge
-                  variant="success"
-                  size="sm"
-                  className="hidden sm:inline-flex gap-1"
-                >
+                <Badge variant="success" size="sm" className="hidden sm:inline-flex gap-1">
                   <CheckCircle2 className="h-3.5 w-3.5 text-success" />
                   <span>Verified Member</span>
                 </Badge>
               ) : (
-                <Badge
-                  variant="warning"
-                  size="sm"
-                  className="hidden sm:inline-flex gap-1"
-                >
+                <Badge variant="warning" size="sm" className="hidden sm:inline-flex gap-1">
                   <Clock className="h-3.5 w-3.5 text-warning" />
                   <span>Pending Verification</span>
                 </Badge>
@@ -331,7 +323,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 title="View My Profile"
               >
                 <div className="hidden text-right md:block">
-                  <p className="text-[13px] font-semibold text-gray-900 line-clamp-1">{displayName}</p>
+                  <p className="text-[13px] font-semibold text-gray-900 line-clamp-1">
+                    {displayName}
+                  </p>
                   <p className="mt-0.5 text-[11px] text-gray-500 line-clamp-1">{displayEmail}</p>
                 </div>
 
