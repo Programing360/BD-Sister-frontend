@@ -1,16 +1,26 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
+  async redirects() {
+    return [
+      {
+        source: "/sign-in",
+        destination: "/login",
+        permanent: true,
       },
-    },
+      {
+        source: "/sign-up",
+        destination: "/register",
+        permanent: true,
+      },
+      {
+        source: "/business",
+        destination: "/my-business",
+        permanent: true,
+      },
+    ];
   },
 };
 

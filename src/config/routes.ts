@@ -1,0 +1,53 @@
+export const ROUTES = {
+  public: {
+    home: "/",
+    about: "/about",
+    community: "/community",
+    businesses: "/businesses",
+    directory: "/businesses",
+    marketplace: "/marketplace",
+    learning: "/learning",
+    events: "/events",
+    contact: "/contact",
+    faq: "/faq",
+    privacy: "/privacy-policy",
+    privacyPolicy: "/privacy-policy",
+    terms: "/terms-and-conditions",
+    termsAndConditions: "/terms-and-conditions",
+  },
+  auth: {
+    login: "/login",
+    register: "/register",
+    signIn: "/login",
+    signUp: "/register",
+    signOut: "/sign-out",
+    forgotPassword: "/forgot-password",
+    resetPassword: "/reset-password",
+    verifyEmail: "/verify-email",
+    error: "/auth-error",
+  },
+  member: {
+    dashboard: "/dashboard",
+    profile: "/dashboard/profile",
+    editProfile: "/dashboard/profile/edit",
+    myBusiness: "/dashboard/my-business",
+    messages: "/dashboard/messages",
+    notifications: "/dashboard/notifications",
+    savedItems: "/saved",
+    settings: "/dashboard/settings",
+  },
+  admin: {
+    dashboard: "/admin",
+    users: "/admin/users",
+    businesses: "/admin/businesses",
+    moderation: "/admin/moderation",
+    reports: "/admin/reports",
+    settings: "/admin/settings",
+  },
+  api: {
+    health: "/api/health",
+    auth: "/api/auth",
+  },
+} as const;
+
+export type RouteKey = typeof ROUTES;
